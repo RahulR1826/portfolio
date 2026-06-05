@@ -8,6 +8,7 @@ interface FadeInProps {
   x?: number;
   y?: number;
   className?: string;
+  as?: string; // accepted for backwards compatibility, ignored internally
 }
 
 // Pre-create the motion.div outside any render — this avoids remounting

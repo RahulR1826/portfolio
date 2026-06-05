@@ -1,17 +1,26 @@
 import React from 'react';
 
-interface PrimaryButtonProps extends React.AnchorHTMLAttributes<HTMLAnchorElement> {
+type ButtonProps = {
   className?: string;
   children?: React.ReactNode;
   as?: 'button' | 'a';
   href?: string;
-}
+  target?: string;
+  rel?: string;
+  type?: 'button' | 'submit' | 'reset';
+  disabled?: boolean;
+  onClick?: React.MouseEventHandler<HTMLElement>;
+};
 
-export const PrimaryButton: React.FC<PrimaryButtonProps> = ({ className = '', children = 'Contact Me', as = 'button', href, ...rest }) => {
+export const PrimaryButton: React.FC<ButtonProps> = ({
+  className = '',
+  children = 'Contact Me',
+  as = 'button',
+  ...rest
+}) => {
   const Component = as as any;
   return (
     <Component
-      href={href}
       {...rest}
       className={`rounded-full text-white font-medium uppercase tracking-widest px-8 py-3 sm:px-10 sm:py-3.5 md:px-12 md:py-4 text-xs sm:text-sm md:text-base outline-none inline-flex items-center justify-center ${className}`}
       style={{
