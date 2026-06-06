@@ -27,7 +27,7 @@ export const ExperienceSection: React.FC = () => {
           </p>
 
           <a
-            href="https://drive.google.com/file/d/1a07Gt9ajRc2o12sjVn1Wazq1uc9Ui5ie/view?usp=sharing"
+            href="https://drive.google.com/file/d/1hKfRBYF0EWfzX9Dku68cBM8CGtIEPQka/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-2 mt-6 px-5 py-2.5 border-2 border-[#0C0C0C] rounded-full text-[#0C0C0C] font-semibold uppercase tracking-widest text-xs hover:bg-[#0C0C0C] hover:text-white transition-all duration-300 ease-in-out"
