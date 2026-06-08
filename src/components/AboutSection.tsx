@@ -1,8 +1,8 @@
 import React from 'react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { AnimatedText } from './AnimatedText';
 
-const iconVariants = {
+const iconVariants: Variants = {
   hidden: (custom: { x: number; y: number }) => ({
     opacity: 0,
     x: custom.x,
@@ -13,7 +13,7 @@ const iconVariants = {
     x: 0,
     y: 0,
     transition: {
-      type: 'spring',
+      type: 'spring' as const,
       stiffness: 60,
       damping: 14,
       mass: 0.8,
