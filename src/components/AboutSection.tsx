@@ -1,24 +1,12 @@
 import React from 'react';
-import { motion, type Variants } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { AnimatedText } from './AnimatedText';
 
-const iconVariants: Variants = {
-  hidden: (custom: { x: number; y: number }) => ({
-    opacity: 0,
-    x: custom.x,
-    y: custom.y,
-  }),
-  visible: {
-    opacity: 0.5,
-    x: 0,
-    y: 0,
-    transition: {
-      type: 'spring' as const,
-      stiffness: 60,
-      damping: 14,
-      mass: 0.8,
-    },
-  },
+const springTransition = {
+  type: 'spring' as const,
+  stiffness: 60,
+  damping: 14,
+  mass: 0.8,
 };
 
 export const AboutSection: React.FC = () => {
@@ -28,14 +16,11 @@ export const AboutSection: React.FC = () => {
 
       {/* Top-left moon — from left */}
       <motion.div
-        custom={{ x: -320, y: -80 }}
-        variants={iconVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: -320, y: -80 }}
+        whileInView={{ opacity: 0.5, x: 0, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
-        transition-delay="0s"
+        transition={springTransition}
         className="absolute top-[4%] left-[1%] sm:left-[2%] md:left-[4%] z-0"
-        style={{ transitionDelay: '0s' }}
       >
         <img
           src="https://shrug-person-78902957.figma.site/_components/v2/ebb2b8f25d8e24d5f0a5ca8af4c950de81aa2fd7/moon_icon.11395d36.png"
@@ -46,11 +31,10 @@ export const AboutSection: React.FC = () => {
 
       {/* Bottom-left smiley — from left */}
       <motion.div
-        custom={{ x: -300, y: 80 }}
-        variants={iconVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: -300, y: 80 }}
+        whileInView={{ opacity: 0.5, x: 0, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
+        transition={springTransition}
         className="absolute bottom-[8%] left-[3%] sm:left-[6%] md:left-[10%] z-0"
       >
         <motion.img
@@ -64,11 +48,10 @@ export const AboutSection: React.FC = () => {
 
       {/* Top-right lego — from right */}
       <motion.div
-        custom={{ x: 320, y: -80 }}
-        variants={iconVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: 320, y: -80 }}
+        whileInView={{ opacity: 0.5, x: 0, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
+        transition={springTransition}
         className="absolute top-[4%] right-[1%] sm:right-[2%] md:right-[4%] z-0"
       >
         <img
@@ -80,11 +63,10 @@ export const AboutSection: React.FC = () => {
 
       {/* Bottom-right cursor — from right */}
       <motion.div
-        custom={{ x: 300, y: 80 }}
-        variants={iconVariants}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: 300, y: 80 }}
+        whileInView={{ opacity: 0.5, x: 0, y: 0 }}
         viewport={{ once: true, amount: 0.1 }}
+        transition={springTransition}
         className="absolute bottom-[8%] right-[3%] sm:right-[6%] md:right-[10%] z-0"
       >
         <motion.img
